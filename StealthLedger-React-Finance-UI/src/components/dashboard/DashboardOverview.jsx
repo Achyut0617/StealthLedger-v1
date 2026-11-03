@@ -1,0 +1,8 @@
+import React from "react";
+import {FinancialSummary} from "./FinancialSummary";
+import {SpendingChart} from "./SpendingChart";
+import {CategoryBreakdown} from "./CategoryBreakdown";
+import {RecentTransactions} from "./RecentTransactions";
+import {ArrowUpRight,Download} from "lucide-react";
+export function DashboardOverview(){return <><div className="page-heading"><div><div className="eyebrow">TUESDAY, NOVEMBER 3, 2026</div><h1>Good evening, Achyut <span>✦</span></h1><p>Here's what's happening with your money.</p></div><button className="button-secondary"><Download size={16}/> Export report</button></div><FinancialSummary/><div className="dashboard-grid"><section className="panel chart-panel"><div className="panel-heading"><div><h2>Cash flow</h2><p>Your income and expenses over time</p></div><select className="select-control" defaultValue="This month"><option>This month</option><option>Last month</option><option>This year</option></select></div><SpendingChart/></section><section className="panel"><div className="panel-heading"><div><h2>Spending by category</h2><p>Where your money goes</p></div><button className="text-action">Details <ArrowUpRight size={14}/></button></div><CategoryBreakdown/></section></div><section className="panel recent-panel"><div className="panel-heading"><div><h2>Recent transactions</h2><p>Your latest account activity</p></div><button className="text-action">View all <ArrowUpRight size={14}/></button></div><RecentTransactions/></section></>}
+}

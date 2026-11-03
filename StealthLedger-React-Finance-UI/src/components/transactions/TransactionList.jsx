@@ -1,0 +1,7 @@
+import React,{useMemo,useState} from "react";
+import {transactions as initial} from "../../data";
+import {TransactionFilters} from "./TransactionFilters";
+import {TransactionCard} from "./TransactionCard";
+import {TransactionEditor} from "./TransactionEditor";
+export function TransactionList(){const [items,setItems]=useState(initial);const [query,setQuery]=useState("");const [type,setType]=useState("All");const [editing,setEditing]=useState(false);const filtered=useMemo(()=>items.filter(t=>(t.name.toLowerCase().includes(query.toLowerCase())||t.category.toLowerCase().includes(query.toLowerCase()))&&(type==="All"||(type==="Income"?t.amount>0:t.amount<0))),[items,query,type]);return <><div className="page-heading"><div><div className="eyebrow">YOUR MONEY, IN MOTION</div><h1>Transactions</h1><p>Review and manage your account activity.</p></div><button className="button-primary" onClick={()=>setEditing(true)}>＋ Add transaction</button></div><TransactionFilters query={query} onQuery={setQuery} type={type} onType={setType}/><section className="panel"><div className="panel-heading"><div><h2>All transactions</h2><p>{filtered.length} records found</p></div></div><div className="transaction-stack">{filtered.map(t=><TransactionCard key={t.id} transaction={t}/>)}</div></section>{editing&&<TransactionEditor onClose={()=>setEditing(false)} onSave={t=>{setItems([t,...items]);setEditing(false)}}/>}</>}
+}

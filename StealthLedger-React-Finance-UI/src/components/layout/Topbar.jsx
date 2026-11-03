@@ -1,0 +1,4 @@
+import React from "react";
+import {Bell,Search,Menu,ChevronDown} from "lucide-react";
+export function Topbar({title,onMenu}){return <header className="topbar"><button className="icon-button mobile-menu" onClick={onMenu}><Menu size={19}/></button><div className="breadcrumb">Workspace <span>/</span> <b>{title}</b></div><div className="topbar-actions"><div className="search-box"><Search size={16}/><span>Search anything...</span><kbd>⌘ K</kbd></div><button className="icon-button notification"><Bell size={18}/><i/></button><div className="top-avatar">AY</div><ChevronDown size={15} className="muted"/></div></header>}
+}

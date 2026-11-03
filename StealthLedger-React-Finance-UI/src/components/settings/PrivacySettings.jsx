@@ -1,0 +1,6 @@
+import React from "react";
+import {DataManagement} from "./DataManagement";
+import {PermissionManager} from "./PermissionManager";
+import {ShieldCheck,LockKeyhole} from "lucide-react";
+export function PrivacySettings(){return <><div className="page-heading"><div><div className="eyebrow">YOUR ACCOUNT, YOUR RULES</div><h1>Privacy & settings</h1><p>Manage how your financial data is stored and protected.</p></div></div><section className="panel settings-intro"><div className="settings-shield"><ShieldCheck size={23}/></div><div><h2>Privacy comes first.</h2><p>Your financial information should stay yours. Review your controls and permissions below.</p></div><span className="status-pill">Protection active</span></section><PermissionManager/><DataManagement/><section className="panel settings-row"><div className="settings-icon"><LockKeyhole size={18}/></div><div className="settings-copy"><b>Passphrase & account security</b><p>Update your passphrase and review account protection.</p></div><button className="button-secondary">Manage</button></section></>}
+}
