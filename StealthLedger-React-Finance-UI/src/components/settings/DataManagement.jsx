@@ -1,4 +1,0 @@
-import React from "react";
-import {Database,Download,Trash2} from "lucide-react";
-export function DataManagement(){return <section className="panel settings-section"><div className="panel-heading"><div><h2>Data management</h2><p>Control your personal financial records.</p></div><Database size={19} className="muted"/></div><div className="settings-row"><div className="settings-icon"><Download size={18}/></div><div className="settings-copy"><b>Export your data</b><p>Download a copy of your transaction and budget data.</p></div><button className="button-secondary">Export data</button></div><div className="settings-row danger-row"><div className="settings-icon"><Trash2 size={18}/></div><div className="settings-copy"><b>Delete local data</b><p>Remove locally stored demo data from this browser.</p></div><button className="button-secondary danger-button">Review</button></div></section>}
-}

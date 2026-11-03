@@ -1,5 +1,0 @@
-import React from "react";
-import {Wallet,TrendingUp,TrendingDown,Activity} from "lucide-react";
-const cards=[{label:"Total balance",value:"$12,840.50",change:"+8.2%",caption:"vs. last month",Icon:Wallet,positive:true},{label:"Income",value:"$5,240.00",change:"+12.5%",caption:"vs. last month",Icon:TrendingUp,positive:true},{label:"Expenses",value:"$2,180.42",change:"−3.4%",caption:"vs. last month",Icon:TrendingDown,positive:true},{label:"Savings rate",value:"58.4%",change:"+4.8%",caption:"vs. last month",Icon:Activity,positive:true}];
-export function FinancialSummary(){return <div className="summary-grid">{cards.map(({label,value,change,caption,Icon,positive})=><article className="summary-card" key={label}><div className="summary-top"><span>{label}</span><span className="summary-icon"><Icon size={17}/></span></div><strong>{value}</strong><div className="summary-foot"><span className="trend"><TrendingUp size={13}/>{change}</span><span>{caption}</span></div></article>)}</div>}
-}

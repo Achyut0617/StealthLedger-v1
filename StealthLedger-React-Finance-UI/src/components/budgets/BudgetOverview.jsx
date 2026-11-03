@@ -1,5 +1,0 @@
-import React from "react";
-import {BudgetCard} from "./BudgetCard";
-import {budgets} from "../../data";
-export function BudgetOverview(){const spent=budgets.reduce((a,b)=>a+b.spent,0),limit=budgets.reduce((a,b)=>a+b.limit,0);return <><div className="page-heading"><div><div className="eyebrow">STAY ON TRACK</div><h1>Your budgets</h1><p>Make every dollar work toward your goals.</p></div><button className="button-primary">＋ Create budget</button></div><div className="budget-total panel"><div><span className="muted-text">Total monthly spending</span><h2>${spent.toLocaleString("en-US")} <small>of ${limit.toLocaleString("en-US")}</small></h2></div><div className="budget-total-right"><b>{Math.round(spent/limit*100)}%</b><span>of total budget used</span></div></div><div className="budget-grid">{budgets.map(b=><BudgetCard key={b.name} budget={b}/>)}</div></>}
-}

@@ -1,6 +1,0 @@
-import React from "react";
-import {LayoutDashboard,ArrowLeftRight,Wallet,Settings,ShieldCheck,PanelLeftClose} from "lucide-react";
-const links=[["Overview",LayoutDashboard],["Transactions",ArrowLeftRight],["Budgets",Wallet],["Settings",Settings]];
-export function Sidebar({activePage,onNavigate}){
- return <aside className="sidebar"><div className="brand"><div className="brand-mark"><ShieldCheck size={19}/></div><span>stealth<span className="brand-light">ledger</span></span></div><div className="workspace-label">WORKSPACE</div><nav>{links.map(([name,Icon])=><button key={name} className={`nav-link ${activePage===name?"active":""}`} onClick={()=>onNavigate(name)}><Icon size={18}/><span>{name}</span>{name==="Transactions"&&<span className="nav-count">6</span>}</button>)}</nav><div className="sidebar-bottom"><div className="security-card"><div className="security-icon"><ShieldCheck size={17}/></div><div><b>Your data is private</b><small>Protected with encryption</small></div></div><div className="profile"><div className="avatar">AY</div><div className="profile-copy"><b>Achyut Yesare</b><small>Personal account</small></div><span className="dots">···</span></div></div></aside>;
-}
