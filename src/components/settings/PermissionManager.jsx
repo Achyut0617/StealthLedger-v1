@@ -1,0 +1,5 @@
+import React,{useState} from "react";
+import {Bell,Mail,Smartphone} from "lucide-react";
+const options=[["Transaction notifications","Get notified when a transaction is recorded.",Bell,true],["Monthly summaries","Receive a monthly overview by email.",Mail,false],["Device access","Allow this device to remember your session.",Smartphone,true]];
+export function PermissionManager(){const [enabled,setEnabled]=useState(options.map(x=>x[3]));return <section className="panel settings-section"><div className="panel-heading"><div><h2>Permissions</h2><p>Choose what this application can do.</p></div></div>{options.map(([name,desc,Icon],i)=><div className="settings-row" key={name}><div className="settings-icon"><Icon size={18}/></div><div className="settings-copy"><b>{name}</b><p>{desc}</p></div><button role="switch" aria-checked={enabled[i]} className={`toggle ${enabled[i]?"on":""}`} onClick={()=>setEnabled(old=>old.map((v,j)=>j===i?!v:v))}><i/></button></div>)}</section>}
+}

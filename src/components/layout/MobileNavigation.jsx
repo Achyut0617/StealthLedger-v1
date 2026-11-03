@@ -1,0 +1,4 @@
+import React from "react";
+import {X,LayoutDashboard,ArrowLeftRight,Wallet,Settings} from "lucide-react";
+export function MobileNavigation({activePage,onNavigate,onClose}){const links=[["Overview",LayoutDashboard],["Transactions",ArrowLeftRight],["Budgets",Wallet],["Settings",Settings]];return <div className="mobile-overlay"><div className="mobile-panel"><div className="mobile-panel-head"><b>Navigation</b><button className="icon-button" onClick={onClose}><X size={18}/></button></div>{links.map(([n,I])=><button key={n} className={`nav-link ${activePage===n?"active":""}`} onClick={()=>onNavigate(n)}><I size={18}/>{n}</button>)}</div></div>}
+}
